@@ -17,12 +17,12 @@ jobs:
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '8.3'
+        php-version: '8.4'
         extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite
         coverage: xdebug
 
     - name: Install dependencies
-      run: composer install --prefer-dist --no-progress --no-suggest
+      run: composer install --prefer-dist --no-progress
 
     - name: Run linter / PHP CodeSniffer
       run: ./vendor/bin/phpcs src/ tests/ || echo "PHPCS not configured yet, skipping..."
